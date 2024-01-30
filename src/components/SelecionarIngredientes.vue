@@ -11,8 +11,8 @@
    </p>
    <ul class="categorias">
 
-    <li v-for="categoria in categorias" :key="categoria.id">
-       {{categoria.nome}}
+    <li v-for="categoria in categorias" :key="categoria.nome">
+     <CardCategoria/>
     </li>
 
    </ul>
@@ -26,6 +26,7 @@
 
 <script>
 import {obterCategorias} from '@/http/index';
+import CardCategoria from './CardCategoria.vue';
 
 export default {
     data(){
