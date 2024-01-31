@@ -12,7 +12,7 @@
    <ul class="categorias">
 
     <li v-for="categoria in categorias" :key="categoria.nome">
-     <CardCategoria/>
+     <CardCategoria :categoria="categoria"/>
     </li>
 
    </ul>
@@ -27,16 +27,18 @@
 <script>
 import {obterCategorias} from '@/http/index';
 import CardCategoria from './CardCategoria.vue';
-
 export default {
     data(){
         return {
             categorias:[]
         }
     },
+    components: { CardCategoria },
+
     async created(){
         this.categorias = await obterCategorias();
-    }
+    },
+
 
 }
 </script>
